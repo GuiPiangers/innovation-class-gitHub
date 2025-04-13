@@ -9,13 +9,13 @@ function App() {
 
   return (
     <Background>
-    <Card>
-      <div className="gap-[27px] w-full flex flex-col items-center">
-        <Logo />
-        <SearchInput />
-        <PerfilCard></PerfilCard>
-      </div>
-    </Card>
+      <Card>
+        <div className="gap-[27px] w-full flex flex-col items-center">
+          <Logo />
+          <SearchInput />
+          <PerfilCard></PerfilCard>
+        </div>
+      </Card>
   </Background>
   )
 }

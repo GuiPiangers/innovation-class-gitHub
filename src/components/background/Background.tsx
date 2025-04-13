@@ -20,7 +20,7 @@ function Squad(){
 
 export default function Background({ children }: {children: ReactNode}){
     return(
-        <div className="relative w-full flex justify-center items-center h-screen overflow-hidden">
+        <div className="p-4 relative w-full flex justify-center items-center h-screen overflow-hidden">
             <Squad />
             <Circle1 />
             <Circle2 />
