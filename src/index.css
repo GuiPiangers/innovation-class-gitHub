@@ -11,4 +11,10 @@ body {
   min-height: 100vh;
 }
 
+@theme {
+  --color-main: #005CFF;
+  --color-main-hover: #0054E8;
+  --color-error: #FF0000;
+}
+
 

@@ -17,7 +17,7 @@ export default function SearchInput({ queryFn }: SearchInputParam){
                 className="w-full text-xl p-4 focus:outline-0 font-semibold placeholder:text-black" 
             />
             <button 
-                className="bg-[#005CFF] h-[62px] w-[62px] rounded-[10px] shrink-0 cursor-pointer flex items-center justify-center"
+                className="bg-main h-[62px] w-[62px] rounded-[10px] shrink-0 cursor-pointer flex items-center justify-center"
                 onClick={() => queryFn(value)}
             >
                 <img className="h-[25] w-[25] object-contain" src={Search} alt="Pesquisar" />

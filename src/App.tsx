@@ -32,7 +32,7 @@ function App() {
 
           {error && 
             <Card className="justify-center">
-              <p className="text-[#FF0000] text-xl text-center">{error.message}</p>
+              <p className="text-error text-xl text-center">{error.message}</p>
             </Card>
           }
 
