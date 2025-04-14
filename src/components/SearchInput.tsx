@@ -14,7 +14,7 @@ export default function SearchInput({ queryFn }: SearchInputParam){
                 onChange={(e) => setValue(e.target.value)} 
                 type="text" 
                 placeholder="Digite um usuário do Github" 
-                className="w-full text-xl p-4 focus:outline-0 font-semibold placeholder:text-black" 
+                className="w-full text-xl p-4 outline-0 ring-0 font-semibold placeholder:text-black" 
             />
             <button 
                 className="bg-main h-[62px] w-[62px] rounded-[10px] shrink-0 cursor-pointer flex items-center justify-center"

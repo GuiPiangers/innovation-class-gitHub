@@ -1,6 +1,7 @@
 import Card from "./components/Card"
 import Background from "./components/background/Background"
 import Logo from "./components/Logo"
+import Spinner from "./components/Spinner"
 import ProfileCard from "./components/ProfileCard"
 import SearchInput from "./components/SearchInput"
 import { useState } from "react"
@@ -37,8 +38,8 @@ function App() {
           }
 
           {isLoading && 
-            <Card>
-              <p>{"Carregando..."}</p>
+            <Card className="justify-center">
+              <Spinner />
             </Card>
           }
 
