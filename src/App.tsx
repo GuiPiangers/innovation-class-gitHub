@@ -1,33 +1,50 @@
 import Card from "./components/Card"
 import Background from "./components/background/Background"
 import Logo from "./components/Logo"
-import PerfilCard from "./components/PerfilCard"
+import ProfileCard from "./components/ProfileCard"
 import SearchInput from "./components/SearchInput"
-import useQuery from "./hooks/useQuery"
 import { useState } from "react"
+import useQuery from "./hooks/useQuery"
 import { fetchGitHubProfile } from "./services/queryGitHub"
 
 
+
 function App() {
-  const [searchProfile, setSearchProfile] = useState("")
-  const {error, isLoading, result} = useQuery(fetchGitHubProfile(searchProfile))
 
-  console.log(result)
+  const [profile, setProfile] = useState<{
+    name: string;
+    avatarUrl: string;
+    bio: string;
+  }>()
 
+  const {query, error, isLoading} = useQuery(async (profileName: string) => {
+    const result = await fetchGitHubProfile(profileName)
+    setProfile(result)
+})
+  console.log(isLoading)
   return (
     <Background>
-      <Card>
+      <div className="min-h-[537px] w-full max-w-[1156px] bg-black p-10 flex flex-col items-center">
         <div className="gap-[27px] w-full flex flex-col items-center">
           <Logo />
-          <SearchInput value={searchProfile} setValue={setSearchProfile}/>
-          <div className="text-white">
-            {searchProfile}
-          </div>
-          {isLoading && "...Carregando"}
-          <button className="text-white">clique</button>
-          <PerfilCard></PerfilCard>
+          
+          <SearchInput queryFn={query}/>
+
+          {error && 
+            <Card className="justify-center">
+              <p className="text-[#FF0000] text-xl text-center">{error.message}</p>
+            </Card>
+          }
+
+          {isLoading && 
+            <Card>
+              <p>{"Carregando..."}</p>
+            </Card>
+          }
+
+          {!error && !isLoading && profile && <ProfileCard {...profile} />}
         </div>
-      </Card>
+      </div>
   </Background>
   )
 }
