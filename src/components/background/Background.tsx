@@ -2,7 +2,9 @@ import { ReactNode } from "react"
 
 function Circle1(){
     return (
-    <div className={`h-[888px] w-[888px] bg-[url(./assets/ellipse.png)] bg-contain bg-center absolute -top-[268px] -right-[254px] -z-1`} />
+        <div className="relative h-[532px]">
+            <div className={`h-[888px] w-[888px] bg-[url(./assets/ellipse.png)] bg-contain bg-center absolute -top-[396px] -right-[396px] -z-1`} />
+        </div>
     )
 }
 function Circle2(){
@@ -20,11 +22,13 @@ function Squad(){
 
 export default function Background({ children }: {children: ReactNode}){
     return(
-        <div className="p-4 relative w-full flex justify-center items-center h-screen overflow-hidden">
-            <Squad />
-            <Circle1 />
+        <div className="relative w-full flex justify-center items-center h-screen overflow-hidden">
             <Circle2 />
-            {children}
+            <div className="overflow-y-auto overflow-x-hidden h-screen p-4 flex justify-center items-center w-full">
+                <Squad />
+                {children}
+                <Circle1 />
+            </div>
         </div>
     )
 }
