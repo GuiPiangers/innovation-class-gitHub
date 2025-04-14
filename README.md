@@ -1,4 +1,4 @@
-# Innovation Class – GitHub User Finder
+# Innovation Class – Busca de Usuário GitHub
 
 Este projeto é parte da Innovation Class e consiste em uma aplicação web que permite buscar perfis do GitHub e exibir informações do usuário.
 
